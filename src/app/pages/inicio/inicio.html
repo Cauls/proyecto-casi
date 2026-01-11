@@ -1,1 +1,37 @@
-<p>inicio works!</p>
+<div class=" bg-gray-100 p-4 md:p-8 h-screen">
+    <div class="max-w-6xl mx-auto">
+        <h1 class="text-3xl font-bold text-gray-800 mb-8 text-left">Data Binding</h1>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+            <!-- Card 1 -->
+            <div class="bg-white rounded-lg shadow p-6">
+                <h2 class="text-xl font-bold text-gray-800 mb-3">Interpolacion</h2>
+                <p class="text-gray-600">Data binding: {{interpolacion}}</p>
+            </div>
+            
+            <!-- Card 2 -->
+            <div class="bg-white rounded-lg shadow p-6 flex items-center">
+                <img [src]="logo" alt="Logo" class="h-20 w-20 rounded object-cover mr-4">
+                <div>
+                    <h2 class="text-xl font-bold text-gray-800 mb-3">Property binding</h2>
+                    <p class="text-gray-600">{{logo}}</p>
+                </div>
+            </div>
+            
+            <!-- Card 3 -->
+            <div class="bg-white rounded-lg shadow p-6">
+                <h2 class="text-xl font-bold text-gray-800 mb-3">Event binding</h2>
+                <button (click)="mostrarMensaje()" class="bg-gray-600 rounded-lg p-2 text-amber-50">Clic aqui</button>
+            </div>
+            
+            <!-- Card 4 -->
+            <div class="bg-white rounded-lg shadow p-6">
+                <h2 class="text-xl font-bold text-gray-800 mb-3">Card 4</h2>
+                <div class="flex">
+                    <input class="m-4" [(ngModel)]="nombre" placeholder="Escribe tu nombre aqui">
+                    <p class="m-4">Tu nombre es: {{nombre}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
