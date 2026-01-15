@@ -28,4 +28,32 @@ export class Comunicacion {
   recibirMensajeDelHijo(event:any){
     this.mensajeDelHijo = event;
   }
+
+  listaAlumnos:any[] = [
+    {
+      nombre:"Hans Burger",
+      email:"email.emailez@gmail.com",
+      progreso:25,
+    },
+    {
+      nombre:"Sofia ramirez",
+      email:"email.emailez@gmail.com",
+      progreso:0,
+    },
+    {
+      nombre:"Liam Wong",
+      email:"email.emailez@gmail.com",
+      progreso:0,
+    },
+    {
+      nombre:"Emma Johnson",
+      email:"email.emailez@gmail.com",
+      progreso:25,
+    },
+    {
+      nombre:"Carlos Vega",
+      email:"email.emailez@gmail.com",
+      progreso:25,
+    }
+  ]
 }
