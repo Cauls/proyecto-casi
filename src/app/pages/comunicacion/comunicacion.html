@@ -103,7 +103,7 @@
                                 </div>
                             </td>
                             <td class="p-3"><span class="bg-green-300 p-3 rounded-2xl text-center">{{alumno.progreso}}%</span></td>
-                            <td > <button class="bg-green-300 p-3 rounded-2xl">Detalle</button></td>
+                            <td > <span class="bg-green-300 p-3 rounded-2xl text-center"><a routerLink="/detalle/{{alumno.id}}" (click)="verDetalle(alumno)">Abrir vista detalle</a></span>
                         </tr>
                         }
 

@@ -5,6 +5,7 @@ import { Comunicacion } from './pages/comunicacion/comunicacion';
 import { Formularios } from './pages/formularios/formularios';
 import { Servicios } from './pages/servicios/servicios';
 import { HttpClient } from './pages/http-client/http-client';
+import { Detalle } from './pages/detalle/detalle';
 
 export const routes: Routes = [
     {
@@ -30,5 +31,9 @@ export const routes: Routes = [
     {
         path: 'http-client',
         component: HttpClient
+    },
+    {
+        path: 'detalle/:id',
+        component: Detalle
     }
 ];

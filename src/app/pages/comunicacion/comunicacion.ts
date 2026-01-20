@@ -1,15 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { Hijo } from './hijo/hijo';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
+import { Alumno, Store } from './store';
+import { Alumnos } from '../servicios/alumnos';
 
 @Component({
   selector: 'app-comunicacion',
-  imports: [Hijo, CommonModule, FormsModule],
+  imports: [Hijo, CommonModule, FormsModule, RouterLink],
   templateUrl: './comunicacion.html',
   styleUrl: './comunicacion.css',
 })
 export class Comunicacion {
+  constructor(
+    private router : Router,
+    private alumnoService : Alumnos
+  ){}
   showModal = false;
 
   mensajeDelPadre:string = '';
@@ -29,31 +37,11 @@ export class Comunicacion {
     this.mensajeDelHijo = event;
   }
 
-  listaAlumnos:any[] = [
-    {
-      nombre:"Hans Burger",
-      email:"email.emailez@gmail.com",
-      progreso:25,
-    },
-    {
-      nombre:"Sofia ramirez",
-      email:"email.emailez@gmail.com",
-      progreso:0,
-    },
-    {
-      nombre:"Liam Wong",
-      email:"email.emailez@gmail.com",
-      progreso:0,
-    },
-    {
-      nombre:"Emma Johnson",
-      email:"email.emailez@gmail.com",
-      progreso:25,
-    },
-    {
-      nombre:"Carlos Vega",
-      email:"email.emailez@gmail.com",
-      progreso:25,
-    }
-  ]
+  verDetalle(alumno:Alumno){
+    this.router.navigate(['/detalle', alumno.id])
+  }
+
+  store = inject(Store)
+
+  listaAlumnos:any[] = this.alumnoService.getAlumnos()
 }
