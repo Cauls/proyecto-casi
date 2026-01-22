@@ -4,20 +4,20 @@ import { Hijo } from './hijo/hijo';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
-import { Alumno, Store } from './store';
-import { Alumnos } from '../servicios/alumnos';
+import { Alumnos, Alumno } from '../servicios/alumnos';
 
 @Component({
   selector: 'app-comunicacion',
+  standalone: true,
   imports: [Hijo, CommonModule, FormsModule, RouterLink],
   templateUrl: './comunicacion.html',
   styleUrl: './comunicacion.css',
 })
 export class Comunicacion {
-  constructor(
-    private router : Router,
-    private alumnoService : Alumnos
-  ){}
+
+  private router = inject(Router);
+  private alumnoService = inject(Alumnos);
+
   showModal = false;
 
   mensajeDelPadre:string = '';
@@ -40,8 +40,6 @@ export class Comunicacion {
   verDetalle(alumno:Alumno){
     this.router.navigate(['/detalle', alumno.id])
   }
-
-  store = inject(Store)
 
   listaAlumnos:any[] = this.alumnoService.getAlumnos()
 }

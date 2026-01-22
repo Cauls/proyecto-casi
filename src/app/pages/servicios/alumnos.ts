@@ -1,8 +1,11 @@
 import { Injectable } from '@angular/core';
 
+export interface Alumno { id: number; nombre: string, email: string, progreso: number }
+
 @Injectable({
   providedIn: 'root',
 })
+
 export class Alumnos {
   getAlumnos(){
     return this.listaAlumnos

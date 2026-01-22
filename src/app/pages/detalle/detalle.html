@@ -3,7 +3,7 @@
         <p class="text-3xl font-bold text-gray-800 mb-8 text-left">Detalle del alumno</p>
     <button class="bg-blue-600 text-amber-50 flex rounded-2xl p-2 text-center h-10">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-4 w-4 mt-1"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
-        <p class="ml-3">Volver</p>
+        <a routerLink="/comunicacion/" class="ml-3">Volver</a>
     </button>
     </div>
     
@@ -11,11 +11,11 @@
         <!-- Tarjeta principal -->
         <div class="bg-white rounded-2xl card-shadow overflow-hidden">
             <!-- Encabezado con nombre y ID -->
-            <div class="p-6 bg-gradient-to-r from-indigo-500 to-purple-600 text-white">
+            <div class="p-6 bg-purple-600 text-white">
                 <div class="flex justify-between items-center">
                     <div>
-                        <h1 class="text-2xl font-bold">{{alumnoSelected?.nombre}}</h1>
-                        <p class="text-indigo-100">ID: 1</p>
+                        <h1 class="text-2xl font-bold">{{alumnoSeleccionado?.nombre}}</h1>
+                        <p class="text-indigo-100">{{alumnoId}}</p>
                     </div>
                     <div class="bg-white/20 p-3 rounded-full">
                         <i class="fas fa-user text-xl"></i>
@@ -34,7 +34,7 @@
                         <div>
                             <p class="text-sm text-gray-500">Email</p>
                             <a href="mailto:wassim.aarab@colegiolitterator.com" class="email-link font-medium text-gray-800">
-                                wassim.aarab@colegiolitterator.com
+                                {{alumnoSeleccionado?.email}}
                             </a>
                         </div>
                     </div>
@@ -46,10 +46,10 @@
                     <div>
                         <div class="flex justify-between items-center mb-2">
                             <span class="font-medium text-gray-700">Estado</span>
-                            <span class="font-bold text-indigo-600">25%</span>
+                            <span class="font-bold text-indigo-600">{{alumnoSeleccionado?.progreso}}%</span>
                         </div>
                         <div class="w-full bg-gray-200 rounded-full h-3">
-                            <div class="bg-gradient-to-r from-amber-400 to-amber-500 h-3 rounded-full progress-bar" style="width: 25%"></div>
+                            <div class="bg-linear-to-r from-amber-400 to-amber-500 h-3 rounded-full progress-bar" [style.width.%]="alumnoSeleccionado?.progreso"></div>
                         </div>
                         <div class="flex justify-between text-xs text-gray-500 mt-1">
                             <span>Inicio</span>
@@ -64,7 +64,7 @@
                             <span class="font-bold text-emerald-600">25%</span>
                         </div>
                         <div class="w-full bg-gray-200 rounded-full h-3">
-                            <div class="bg-gradient-to-r from-emerald-400 to-emerald-500 h-3 rounded-full progress-bar" style="width: 25%"></div>
+                            <div class="bg-linear-to-r from-emerald-400 to-emerald-500 h-3 rounded-full progress-bar" style="width: 25%"></div>
                         </div>
                         <div class="flex justify-between text-xs text-gray-500 mt-1">
                             <span>0%</span>
@@ -76,7 +76,7 @@
                 
                 <!-- Botón de acción -->
                 <div class="mt-8 pt-6 border-t border-gray-100">
-                    <button class="back-button flex items-center justify-center gap-2 w-full py-3 px-4 bg-gradient-to-r from-indigo-500 to-indigo-600 hover:from-indigo-600 hover:to-indigo-700 text-white font-medium rounded-lg transition duration-200">
+                    <button class="back-button flex items-center justify-center gap-2 w-full py-3 px-4 bg-linear-to-r from-indigo-500 to-indigo-600 hover:from-indigo-600 hover:to-indigo-700 text-white font-medium rounded-lg transition duration-200">
                         <i class="fas fa-arrow-left"></i>
                         <span>Acción</span>
                     </button>
@@ -89,10 +89,6 @@
             </div>
         </div>
         
-        <!-- Información adicional -->
-        <div class="mt-6 text-center text-sm text-gray-500">
-            <p>Card creada con Tailwind CSS y Font Awesome icons</p>
-        </div>
     </div>
 
 </div>
