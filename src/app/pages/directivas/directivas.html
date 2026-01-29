@@ -60,23 +60,27 @@
 
         <div class="h-auto mt-15">
             <h1 class="text-2xl font-bold text-gray-800 mb-8 text-left">Directiva &#64;switch</h1>
-            <div class="bg-white rounded-2xl p-4 shadow-2xl">
+            <div class="bg-white rounded-2xl p-4 shadow-2xl flex justify-center items-center">
                 <div class="flex">
-                    <h1 class="m-4 mb-2 p-4 py-2 font-bold text-2xl">Ejemplo:</h1>
-                    <button (click)="color='rojo'" class="bg-red-600 text-white py-2 px-4 rounded-lg m-4 mb-2">Rojo</button>
-                    <button (click)="color='azul'" class="bg-blue-600 text-white py-2 px-4 rounded-lg m-4 mb-2">Azul</button>
-                    <button (click)="color='verde'" class="bg-green-600 text-white py-2 px-4 rounded-lg m-4 mb-2">Verde</button>
-                    @switch(color){
-                        @case("rojo"){
-                            <h1 class="m-4 mb-2 p-4 py-2 font-bold text-2xl text-red-600">Rojo</h1>
+                    <div class="flex flex-col">
+                        <h1 class="mb-2 p-4 py-2 font-bold text-2xl">Ejemplo:</h1>
+                        <button (click)="color='rojo'" class="bg-red-600 text-white py-2 px-4 rounded-lg m-4 mb-2">Rojo</button>
+                        <button (click)="color='azul'" class="bg-blue-600 text-white py-2 px-4 rounded-lg m-4 mb-2">Azul</button>
+                        <button (click)="color='verde'" class="bg-green-600 text-white py-2 px-4 rounded-lg m-4 mb-2">Verde</button>
+                    </div>
+                    <div class="flex justify-center items-center p3 min-w-30">
+                        @switch(color){
+                            @case("rojo"){
+                                <h1 class="p-4 py-2 font-bold text-2xl text-red-600">Rojo</h1>
+                            }
+                            @case("azul"){
+                                <h1 class="p-4 py-2 font-bold text-2xl text-blue-600">Azul</h1>
+                            }
+                            @case("verde"){
+                                <h1 class="p-4 py-2 font-bold text-2xl text-green-600">Verde</h1>
+                            }
                         }
-                        @case("azul"){
-                            <h1 class="m-4 mb-2 p-4 py-2 font-bold text-2xl text-blue-600">Azul</h1>
-                        }
-                        @case("verde"){
-                            <h1 class="m-4 mb-2 p-4 py-2 font-bold text-2xl text-green-600">Verde</h1>
-                        }
-                    }
+                    </div>
                 </div>
             </div>
         </div>
